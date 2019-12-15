@@ -1,0 +1,22 @@
+{
+  "name": "azubi-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --config .mocharc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/as-ideas/azubi-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/as-ideas/azubi-javascript/issues"
+  },
+  "homepage": "https://github.com/as-ideas/azubi-javascript#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
