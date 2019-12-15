@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --config .mocharc.json"
+    "single": "mocha --config .mocharc.json --grep",
+    "all": "mocha --config .mocharc.json"
   },
   "repository": {
     "type": "git",

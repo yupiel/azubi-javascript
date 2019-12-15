@@ -1,3 +1,5 @@
 {
-    "spec": "src/**/*.spec.js"
+    "spec": "src/**/*.spec.js",
+    "reporter": "spec",
+    "diff": false
 }
