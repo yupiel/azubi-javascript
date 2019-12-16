@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-describe('control structures', function () {
+describe('controlstructures', function () {
     describe('if', function () {
         it('single', function () {
 
