@@ -33,3 +33,13 @@ Now solve the test suite by fixing all the tests:
 Now solve the test suite by fixing all the tests:
 
 ```npm run single -- controlstructures```
+
+3. Arrays
+---------------------
+
+- what operations would you do with a list of elements? List them!
+- why do you think is this true ```typeof [] ==  "object"```? What makes an object an object in classical programming?
+
+Now solve the test suite by fixing all the tests:
+
+```npm run single -- arrays```
