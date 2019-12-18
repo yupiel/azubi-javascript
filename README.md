@@ -65,3 +65,14 @@ Now solve the test suite by fixing all the tests:
 Now solve the test suite by fixing all the tests:
 
 ```npm run single -- functions```
+
+6. Scope
+---------------------
+
+- What is the difference between declaration and definition? How does this relate to the concept of 'hoisting'. Explain!
+- Watch https://www.youtube.com/watch?v=ZoFlcv2ByBo . 
+- What is hoisting again? What scopes does javascript use? List them!
+
+Now solve the test suite by fixing all the tests:
+
+```npm run single -- scope```
