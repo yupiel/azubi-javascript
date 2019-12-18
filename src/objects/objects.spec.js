@@ -25,7 +25,7 @@ describe('objects', function () {
         });
     });
 
-    describe('functions', function () {
+    describe('actions', function () {
         it('access key of object', function() {
 
             let givenObject = {

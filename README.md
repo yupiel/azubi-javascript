@@ -53,3 +53,15 @@ Now solve the test suite by fixing all the tests:
 Now solve the test suite by fixing all the tests:
 
 ```npm run single -- objects```
+
+
+5. Functions
+---------------------
+
+- write a function in three different programming languages that returns the sum of two numbers, which have been given to the function as an argument.
+- what is similar in all three implementations? what is different?
+- explain variable shadowing. Give me an example!
+
+Now solve the test suite by fixing all the tests:
+
+```npm run single -- functions```

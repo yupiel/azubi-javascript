@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 describe('arrays', function () {
-    describe('functions', function () {
+    describe('actions', function () {
         it('array has a length', function () {
 
             let givenArray = [1, 2, 3];
