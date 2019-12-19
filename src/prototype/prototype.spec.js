@@ -66,7 +66,7 @@ describe('prototypes', function () {
         User.prototype.sayHello = function () {
             return `Hello, my name is ${this.firstName}!`;
         }
-        
+
         var u = new User();
 
         let actual = u instanceof User;
@@ -84,16 +84,16 @@ describe('prototypes', function () {
         User.prototype.sayHello = function () {
             return `I am ${this.firstName}.`;
         }
-        
+
         let names = ['Peter', 'Paul', 'Merry'];
         let users = [];
-        for (var name of names ) {
+        for (var name of names) {
             var u = new User(name);
             users.push(u);
         }
-       
+
         let actual = [];
-        users.forEach(function(user){ 
+        users.forEach(function (user) {
             var greeting = user.sayHello();
             actual.push(greeting);
         })
@@ -105,15 +105,15 @@ describe('prototypes', function () {
 
     it('Different constructor functions, same prototypes, same instanceof ?', function testMethod() {
 
-        function sayHello () {
+        function sayHello() {
             return `I am ${this.firstName}.`;
         }
 
-        function User(name) { this.firstName = name;  }
+        function User(name) { this.firstName = name; }
         User.prototype.sayHello = sayHello;
         var u = new User();
 
-        function Person(name) { this.firstName = name;  }
+        function Person(name) { this.firstName = name; }
         Person.prototype.sayHello = sayHello;
         var p = new Person();
 
@@ -126,11 +126,11 @@ describe('prototypes', function () {
 
     it('Every object in JS has some prototype methods already set, override?', function testMethod() {
 
-        function Account(userId, pwd) { 
+        function Account(userId, pwd) {
             this.id = userId;
             this.password = pwd;
         }
-        Account.prototype.toString  = function() {
+        Account.prototype.toString = function () {
             return `[user="${this.id}", hash=${this.password}]`;
         }
 
@@ -148,11 +148,11 @@ describe('prototypes', function () {
         var oldToString = Object.prototype.toString;
 
         // toString will be called when you want the string representation of an object; nice!
-        Object.prototype.toString  = function() {
+        Object.prototype.toString = function () {
             return 'I am object';
         }
 
-        var o = { a: 1, b: 2};
+        var o = { a: 1, b: 2 };
         let actual = "" + o;
         let expected = '???';
 
@@ -169,12 +169,12 @@ describe('prototypes', function () {
         function GeometricObject() {
             this.name = "?";
         }
-        GeometricObject.prototype.toString  = function() {
+        GeometricObject.prototype.toString = function () {
             return `I am a ${this.name} with an area of ${this.area()}`;
         }
 
         // Rectancle represents a rectancle
-        function Rectangle(w,h) {
+        function Rectangle(w, h) {
             this.name = "Rectangle";
             this.width = w;
             this.height = h;
@@ -184,15 +184,64 @@ describe('prototypes', function () {
         Rectangle.prototype = Object.create(GeometricObject.prototype);
 
         // override or set the area prototype function
-        Rectangle.prototype.area  = function() {
+        Rectangle.prototype.area = function () {
             return this.width * this.height;
         }
 
-        var rec1 = new Rectangle(10,5);
-        var rec2 = new Rectangle(5,5);
-        let actual = rec1 + " and " + rec2;
+        var rec1 = new Rectangle(10, 5);
+        var rec2 = new Rectangle(5, 5);
+        let actual = `${rec1} and ${rec2} are cool`;
 
         let expected = '???';
         assert.equal(actual, expected);
     });
+
+    it('You can compare prototypes', function testMethod() {
+
+        function NamedThing() {
+            this.name = "?";
+        }
+        NamedThing.prototype.toString = function () {
+            return `I am ${this.name}`;
+        }
+
+        var namedInstance = new NamedThing();
+
+        var actual = Object.getPrototypeOf(namedInstance) == NamedThing.prototype;
+
+        let expected = '???';
+        assert.equal(actual, expected);
+    });
+
+    it('You can use prototypes to "make sure" that methods exist', function testMethod() {
+
+        function Greeter(name) { this.name = name; }
+        Greeter.prototype.greet = function () {
+            return `Hello, I am ${this.name}`;
+        }
+
+        var fakeItem = {
+            name: 'Marray',
+            greet: function() {
+                return `Hello, I am ${this.name}`;
+            }
+        }
+
+        let listOfThings = [1,2, new Greeter('peter'), new Greeter('Paul'), fakeItem];
+        let greetings = [];
+        listOfThings.forEach((item) => {
+
+            // poor man's type-safety net; 
+            if (Object.getPrototypeOf(item) == Greeter.prototype) {
+                greetings.push(item.greet()); // Since the item has the Greeter prototype it must have the method 'greet'
+            }
+        })
+
+        var actual = greetings;
+
+        let expected = '???';
+        assert.equal(actual, expected);
+    });
+
+
 });
