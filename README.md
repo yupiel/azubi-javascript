@@ -66,6 +66,7 @@ Now solve the test suite by fixing all the tests:
 
 ```npm run single -- functions```
 
+
 6. Scope
 ---------------------
 
@@ -76,3 +77,18 @@ Now solve the test suite by fixing all the tests:
 Now solve the test suite by fixing all the tests:
 
 ```npm run single -- scope```
+
+
+7. Prototypes
+---------------------
+
+There are many definitions of 'prototype': 1) an original model on which something is patterned, 2) a standard or typical example, 3) a first full-scale and usually functional form of a new type or design of a construction. For JavaScript the first one applies!
+
+- What types of languages do you know. Try to find 3 groups. 
+- What are the main concepts of an object-oriented programming language?
+- every property of an js-object has to be stored in memory. Open your favorite browser and try to analyse the memory footprint of a website.
+
+
+Now solve the test suite by fixing all the tests:
+
+```npm run single -- prototypes```
