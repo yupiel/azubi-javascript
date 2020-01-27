@@ -1,3 +1,5 @@
+var arrays = require('./arrays');
+
 var assert = require('assert');
 
 describe('arrays', function () {
@@ -5,8 +7,8 @@ describe('arrays', function () {
         it('array has a length', function () {
 
             let givenArray = [1, 2, 3];
-            let actual = givenArray.length;
-            let expected = '???';
+            let actual = arrays.getLength(givenArray);
+            let expected = 3;
 
             assert.deepEqual(actual, expected);
         });
@@ -14,12 +16,9 @@ describe('arrays', function () {
         it('copy array', function () {
 
             let givenArray = [1, 2, 3];
-            let copiedArray = Array.from(givenArray); // copies array
+            let copiedArray = arrays.copyArray(givenArray);
 
-            let trueOrFalse = false; // fix me
-            let sameLength = givenArray.length == copiedArray.length;
-
-            assert.deepEqual(sameLength, trueOrFalse);
+            assert.deepEqual(givenArray, copiedArray);
         });
 
         it('add element', function () {
@@ -27,7 +26,7 @@ describe('arrays', function () {
             let givenArray = [1, 2, 3];
             let expected = [1,2,3,4];
 
-            givenArray.push() // fix me
+            arrays.addElementToArray(givenArray, 4);
 
             let actual = Array.from(givenArray);
             assert.deepEqual(actual, expected);
@@ -38,7 +37,7 @@ describe('arrays', function () {
             let givenArray = [1, 2, 3];
             let expected = [1,2,3,4,5,6,7];
 
-            givenArray.push() // fix me
+            arrays.addElementsToArray(givenArray, [4,5,6,7]);
 
             assert.deepEqual(givenArray, expected);
         });
