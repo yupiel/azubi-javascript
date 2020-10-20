@@ -17,7 +17,12 @@ The idea is to have failing tests and the azubis have to fix them.
 -------------
 
 - what datatypes do exist in the programming language JavaScript?  List them!
+Javascript doesn't have datatypes in the traditional sense. There are a lot of implicit conversions going on in the background, so everything is *dynamic*.
+Off the top of my head there are: Number, String, Boolean, Object, Array, and undefined.
+Null exists but is treated as an object afaik
+
 - what does coersion mean? Give me an example!
+Coercion is the name used for the system of automatic implicit data conversion in Javascript.
 
 Now solve the test suite by fixing all the tests:
 
@@ -27,8 +32,21 @@ Now solve the test suite by fixing all the tests:
 ---------------------
 
 - what control structures do you know?
+if/else if/else, for, (do) while, switch/case, with. I'm not sure if try/catch counts to this as well but I doubt it.
+
 - given a loop that prints number from 1 to 5. Implement this with a for loop and a while loop.
+```javascript
+for(let i = 1; i <= 5; i++) { console.log(i); }
+//--------------------------------------------
+let i = 1;
+while(i <= 5){
+    console.log(i);
+    i++;
+}
+```
+
 - What is a fall-through in context of a switch statement?
+Fallthrough will execute all other applicable cases in the switch statement under the entry point if the first case isn't ended with a "break;" to jump out of the switch statement.
 
 Now solve the test suite by fixing all the tests:
 

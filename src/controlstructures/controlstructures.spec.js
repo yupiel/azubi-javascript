@@ -11,7 +11,7 @@ describe('controlstructures', function () {
                 actual = 123;
             }
 
-            let expected = '???';
+            let expected = 123;
 
             assert.equal(actual, expected);
         });
@@ -27,7 +27,7 @@ describe('controlstructures', function () {
                 actual = 321;
             }
 
-            let expected = '???';
+            let expected = 123;
 
             assert.equal(actual, expected);
         });
@@ -47,7 +47,7 @@ describe('controlstructures', function () {
                 actual = 321;
             }
 
-            let expected = '???';
+            let expected = 2222;
             assert.equal(actual, expected);
         });
     });
@@ -63,7 +63,7 @@ describe('controlstructures', function () {
                 case 123: actual = 'third';
             }
 
-            let expected = '???';
+            let expected = 'third';
             assert.equal(actual, expected);
         });
 
@@ -82,7 +82,7 @@ describe('controlstructures', function () {
                 }
             }
 
-            let expected = '???';
+            let expected = 'first'
             assert.equal(actual, expected);
         });
 
@@ -101,7 +101,7 @@ describe('controlstructures', function () {
                 default: actual = 1;
             }
 
-            let expected = '???';
+            let expected = 1;
             assert.equal(actual, expected);
         });
 
@@ -114,7 +114,7 @@ describe('controlstructures', function () {
             for (var x = 0; x<10; x++) {
                 actual += x;
             }
-            let expected = '???';
+            let expected = 45;
             assert.equal(actual, expected);
         });
         
@@ -124,7 +124,7 @@ describe('controlstructures', function () {
             for (var x = 0, y = 0; x<10 && y<20; x++, y+=2) {
                 actual += x;
             }
-            let expected = '???';
+            let expected = 45;
             assert.equal(actual, expected);
         });
 
@@ -137,7 +137,7 @@ describe('controlstructures', function () {
             for (var key in myObject) {
                  actual += key;
             }
-            let expected = '???';
+            let expected = 'ab';
             assert.equal(actual, expected);
         });
 
@@ -147,7 +147,7 @@ describe('controlstructures', function () {
             for (var element of myArray) {
                  actual += element;
             }
-            let expected = '???';
+            let expected = '2468';
             assert.equal(actual, expected);
         });
 
@@ -157,7 +157,7 @@ describe('controlstructures', function () {
             for (var element of myArray) {
                  actual += element;
             }
-            let expected = '???';
+            let expected = 20;
             assert.equal(actual, expected);
         });
 
@@ -175,7 +175,7 @@ describe('controlstructures', function () {
                  i+=2;
             }
 
-            let expected = '???';
+            let expected = 0;
             assert.equal(actual, expected);
         });
     });

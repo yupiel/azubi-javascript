@@ -7,7 +7,7 @@ describe('datatypes', function () {
       let firstNumber = 1;
       let secondNumber = 2;
       let actual = firstNumber + secondNumber;
-      let expected = '???';
+      let expected = 3;
 
       assert.equal(actual, expected);
     });
@@ -17,7 +17,7 @@ describe('datatypes', function () {
       let firstNumber = 1.21;
       let secondNumber = 2.32;
       let actual = firstNumber + secondNumber;
-      let expected = '???';
+      let expected = 3.53;
 
       assert.equal(actual, expected);
     });
@@ -28,7 +28,7 @@ describe('datatypes', function () {
       let firstNumber = 2e0;
       let secondNumber = 2e-1;
       let actual = firstNumber + secondNumber;
-      let expected = '???';
+      let expected = 2.2;
 
       assert.equal(actual, expected);
     });
@@ -41,7 +41,7 @@ describe('datatypes', function () {
 
       let myBoolean = true; 
       let actual = myBoolean;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(actual, expected);
     });
@@ -50,7 +50,7 @@ describe('datatypes', function () {
 
       let myBoolean = !true; 
       let actual = myBoolean;
-      let expected = '???';
+      let expected = false;
 
       assert.equal(actual, expected);
     });
@@ -59,7 +59,7 @@ describe('datatypes', function () {
 
       let myBoolean = true && false; 
       let actual = myBoolean;
-      let expected = '???';
+      let expected = false;
 
       assert.equal(actual, expected);
     });
@@ -68,7 +68,7 @@ describe('datatypes', function () {
 
       let myBoolean = true || false; 
       let actual = myBoolean;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(actual, expected);
     });
@@ -77,7 +77,7 @@ describe('datatypes', function () {
 
       let myBoolean = !!true; 
       let actual = myBoolean;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(actual, expected);
     });
@@ -91,7 +91,7 @@ describe('datatypes', function () {
       let myObject = {};
 
       let equal = myObject == myObject;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(equal, expected);
 
@@ -103,7 +103,7 @@ describe('datatypes', function () {
       let anotherObject = myObject;
 
       let equal = myObject == anotherObject;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(equal, expected);
 
@@ -116,7 +116,7 @@ describe('datatypes', function () {
       let anotherObject = {};
 
       let equal = myObject == anotherObject;
-      let expected = '???';
+      let expected = false;
 
       assert.equal(equal, expected);
 
@@ -132,7 +132,7 @@ describe('datatypes', function () {
       myObject.age = myObject.age * 2;
 
       let actual = myObject.age;
-      let expected = '???';
+      let expected = 24;
 
       assert.equal(actual, expected);
 
@@ -148,7 +148,7 @@ describe('datatypes', function () {
       myObject.weight = myObject.height;
 
       let actual = myObject.weight;
-      let expected = '???';
+      let expected = undefined;
 
       assert.equal(actual, expected);
 
@@ -163,7 +163,7 @@ describe('datatypes', function () {
         myArray[1] = myArray[0] + myArray[2];
 
         let actual = myArray[1];
-        let expected = '???';
+        let expected = 4;
   
         assert.equal(actual, expected);
   
@@ -173,7 +173,7 @@ describe('datatypes', function () {
 
         let myArray = [1,2,3];
         let actual = myArray[5];
-        let expected = '???';
+        let expected = undefined;
   
         assert.equal(actual, expected);
   
@@ -185,7 +185,7 @@ describe('datatypes', function () {
         myArray[5] = 123;
 
         let actual = myArray[5];
-        let expected = '???';
+        let expected = 123;
   
         assert.equal(actual, expected);
   
@@ -201,7 +201,7 @@ describe('datatypes', function () {
       myString = 'abc' + anotherString;
 
       let actual = myString;
-      let expected = '???';
+      let expected = 'abcdef';
 
       assert.equal(actual, expected);
 
@@ -214,7 +214,7 @@ describe('datatypes', function () {
       myString = `abc ${anotherString}!`;
 
       let actual = myString;
-      let expected = '???';
+      let expected = 'abc def!';
 
       assert.equal(actual, expected);
 
@@ -226,7 +226,7 @@ describe('datatypes', function () {
       let myString = `abc ${anotherString}!`;
       let actual = myString[2];
 
-      let expected = '???';
+      let expected = 'c';
 
       assert.equal(actual, expected);
 
@@ -239,7 +239,7 @@ describe('datatypes', function () {
       let declared;
       let actual = typeof declared;
 
-      let expected = '???';
+      let expected = 'undefined';
 
       assert.equal(actual, expected);
 
@@ -253,7 +253,7 @@ describe('datatypes', function () {
       let newType = typeof myObject;
 
       let actual = originalType ==  newType;
-      let expected = '???';
+      let expected = true;
 
       assert.equal(actual, expected);
 
@@ -266,8 +266,8 @@ describe('datatypes', function () {
       myObject = undefined;
       let newType = typeof myObject;
 
-      let actual = originalType ==  newType;
-      let expected = '???';
+      let actual = originalType == newType;
+      let expected = false;
 
       assert.equal(actual, expected);
 
@@ -282,18 +282,17 @@ describe('datatypes', function () {
       function myFunction() {}
 
       let actual = typeof myFunction;
-      let expected = '???';
+      let expected = 'function';
 
       assert.equal(actual, expected);
 
     })
 
     it('is a type as well seriously', function() {
-
-      let  myFunction = function() {}
+      let myFunction = function() {}
 
       let actual = typeof myFunction;
-      let expected = '???';
+      let expected = 'function';
 
       assert.equal(actual, expected);
 
@@ -309,7 +308,7 @@ describe('datatypes', function () {
       let op3 = op1;
 
       let actual = op1(1,2) + op2(3,4) + op3(5,6);
-      let expected = '???';
+      let expected = 26;
 
       assert.equal(actual, expected);
     })
