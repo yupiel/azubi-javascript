@@ -52,7 +52,7 @@ while(i <= 5){
 
 - What is a fall-through in context of a switch statement?
 <!-- -->
-Fallthrough will execute all other applicable cases in the switch statement under the entry point if the first case isn't ended with a "break;" to jump out of the switch statement.
+Fallthrough will execute all following cases in the switch statement after the first true case point until the next "break;" statement.
 
 Now solve the test suite by fixing all the tests:
 
