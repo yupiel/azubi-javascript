@@ -89,8 +89,41 @@ Now solve the test suite by fixing all the tests:
 ---------------------
 
 - write a function in three different programming languages that returns the sum of two numbers, which have been given to the function as an argument.
+```csharp
+int Sum(int one, int two){
+    return one + two;
+}
+```
+```python
+def sum(one, two):
+    return one + two
+```
+```ruby
+def sum(one, two)
+  return one + two
+end
+```
+
 - what is similar in all three implementations? what is different?
+<!-- -->
+All three implementation use paranthesis for parameters, a "+" for addition, and all of them use the return keyword to give back a result when calling the function.
+While the first example (C#) has defined types, 2 & 3 (Python and Ruby respectively) don't define types for any of the parameters and no return type for the function.
+2 & 3 are also missing {} brackets to define the scope of the function.
+
 - explain variable shadowing. Give me an example!
+<!-- -->
+Variable shadowing occurs when a variable inside of a scope has the same identifier (name) as a variable outside of said scope.
+The variable inside of the scope will then "mask" the outer variable, therefore "shadowing" it.
+```python
+someVar = 0
+
+def someFunc():
+    someVar = 1
+    print(someVar)
+
+print(someVar)
+```
+The inner print statement would print a "1" while the outer one would print a "0".
 
 Now solve the test suite by fixing all the tests:
 
@@ -101,8 +134,21 @@ Now solve the test suite by fixing all the tests:
 ---------------------
 
 - What is the difference between declaration and definition? How does this relate to the concept of 'hoisting'. Explain!
-- Watch https://www.youtube.com/watch?v=ZoFlcv2ByBo . 
+<!-- -->
+When declaring a variable, typically with 'let' or 'var' in Javascript, you're just noting it's existence and making sure that, for example, memory is allocated.
+Once you assign a value to the variable you have defined it because now it doesn't just exist, it holds a value and is therefore "complete".
+
+Javascript's hosting allows for the declaration of 'var' variables anywhere in the code, even *after* their definition.
+
+- Watch https://www.youtube.com/watch?v=ZoFlcv2ByBo . done.
+
 - What is hoisting again? What scopes does javascript use? List them!
+
+Javascript's hoisting will take any 'var' variable declarations and "pull" them to the top of the document during interpretation. 
+Definitions will be executed as they happen in the code.
+This allows, as previously mentioned, for 'var' declaration to happen after their definition (when assuming top to bottom reading) in the code.
+
+Javascript uses a global scope and a local scope.
 
 Now solve the test suite by fixing all the tests:
 
@@ -114,10 +160,23 @@ Now solve the test suite by fixing all the tests:
 
 There are many definitions of 'prototype': 1) an original model on which something is patterned, 2) a standard or typical example, 3) a first full-scale and usually functional form of a new type or design of a construction. For JavaScript the first one applies!
 
-- What types of languages do you know. Try to find 3 groups. 
-- What are the main concepts of an object-oriented programming language?
-- every property of an js-object has to be stored in memory. Open your favorite browser and try to analyse the memory footprint of a website.
+- What types of languages do you know. Try to find 3 groups.
+Array Language (R)
+CLI Language (bash, windows batch)
+Compiled Language (C, C++, C#, ...)
 
+- What are the main concepts of an object-oriented programming language?
+<!-- -->
+Inheritance - Subclassing relationships, sharing of functionality to reduce writing load.
+
+Abstraction - Also exists as a programming principle so I'm not sure which one is meant here. I assume you're asking for the "only reveal relevant parts of the code for usage in other piece of code, not the implementation" kind of abstraction.
+
+Encapsulation - Defined boundaries between classes with keywords like private and protected so outside classes are only able to use what they really *have* to.
+
+Polymorphism - Possibility of objects to take on a different *form* when needed in the program, to reduce code duplication.
+
+- every property of an js-object has to be stored in memory. Open your favorite browser and try to analyse the memory footprint of a website.
+done.
 
 Now solve the test suite by fixing all the tests:
 

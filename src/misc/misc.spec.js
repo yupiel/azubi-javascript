@@ -10,7 +10,7 @@ describe('misc', function () {
             return number * number / 2;
         }(mynumber))
 
-        let expected = '???';
+        let expected = '264.5';
 
         assert.equal(actual, expected);
 

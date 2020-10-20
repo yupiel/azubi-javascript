@@ -23,7 +23,7 @@ describe('scope', function () {
         let actual = ['outer', inside.name, 'insideAgain'].join(',');
 
         // name the scopes if v1, v2 and v3
-        let expected = '???';
+        let expected = 'outer,inside,insideAgain';
 
         assert.equal(actual, expected);
     });
@@ -42,7 +42,7 @@ describe('scope', function () {
         };
 
         let actual = programmer.typing();
-        let expected = '???';
+        let expected = 33;
 
         assert.equal(actual, expected);
     });
@@ -62,7 +62,7 @@ describe('scope', function () {
 
         // call the method typing on the object programmer with the scope set to student 1
         let actual = programmer.typing.call(student);
-        let expected = '???';
+        let expected = 66;
 
         assert.equal(actual, expected);
     });
