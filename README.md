@@ -62,7 +62,13 @@ Now solve the test suite by fixing all the tests:
 ---------------------
 
 - what operations would you do with a list of elements? List them!
-- why do you think is this true ```typeof [] ==  "object"```? What makes an object an object in classical programming?
+<!-- -->
+push, pop, shit, unshift, length, delete, splice, slice, join, indexOf, isArray, and a whole bunch of others depending on use case.
+
+- why do you think is this true ```typeof [] == "object"```? What makes an object an object in classical programming?
+<!-- -->
+Arrays aren't their own thing, they're just special types of Objects and therefore of the type "Object".
+Objects provide a structure; can include properties that may be equal to any other data type (including other objects); encapsulate data for access protection.
 
 Now solve the test suite by fixing all the tests:
 
